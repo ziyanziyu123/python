@@ -94,3 +94,26 @@ print(f"x >= y: {x >= y}")   # True
 
 # 小于等于 <=
 print(f"x <= y: {x <= y}")   # False
+
+# 逻辑运算符演示
+print("\n--- 逻辑运算符 ---")
+
+a = True
+b = False
+
+# and 运算符
+print(f"a and b: {a and b}")  # False
+
+# or 运算符
+print(f"a or b: {a or b}")    # True
+
+# not 运算符
+print(f"not a: {not a}")      # False
+print(f"not b: {not b}")      # True
+
+# 结合比较运算符
+x = 8
+y = 12
+print(f"(x > 5) and (y < 20): {(x > 5) and (y < 20)}")   # True
+print(f"(x < 5) or (y > 10): {(x < 5) or (y > 10)}")     # True
+print(f"not (x == y): {not (x == y)}")                   # True
