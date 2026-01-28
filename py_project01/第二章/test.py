@@ -12,4 +12,5 @@ print(f"新字符串 s2: {s2}, 内存地址: {id(s2)}")
 print(f"原字符串 s1: {s1}, 内存地址: {id(s1)}")  # s1 没有变！
 
 print("\n--- 对比 ---")
-print(f"s1 和 s2 是同一个对象吗？ {s1 is s2}")  # False，是两个不同的对象
+result = s1 is s2
+print(f"s1 和 s2 是同一个对象吗？ {result}")  # False，是两个不同的对象
