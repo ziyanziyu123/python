@@ -1,4 +1,5 @@
 {
-    "editor.fontSize": 20,
-    "chatgpt.openOnStartup": true
+  "editor.fontSize": 20,
+  "chatgpt.openOnStartup": true,
+  "python-envs.pythonProjects": []
 }
