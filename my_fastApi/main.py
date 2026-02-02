@@ -1,10 +1,27 @@
-from fastapi import FastAPI, Path, Query, HTTPException, Request
+from fastapi import FastAPI, Path, Query, HTTPException, Request, Depends
 from fastapi.responses import HTMLResponse, FileResponse
 from pathlib import Path as SysPath
 from pydantic import BaseModel, Field
 from starlette.responses import JSONResponse
+import time
 
 app = FastAPI()
+
+# 中间件示例：演示多个中间件的执行顺序（与截图一致）
+@app.middleware("http")
+async def middleware2(request: Request, call_next):
+    print("中间件2 start")
+    response = await call_next(request)
+    print("中间件2 end")
+    return response
+
+
+@app.middleware("http")
+async def middleware1(request: Request, call_next):
+    print("中间件1 start")
+    response = await call_next(request)
+    print("中间件1 end")
+    return response
 
 @app.get("/")
 def read_root():
@@ -24,7 +41,7 @@ async def get_book(id: int = Path(..., title="The ID of the book to retrieve", g
     return {"book_id": id, "title": f"Book {id} Title"}
 
 # Path 参数示例：限制长度、设置描述和示例
-@app.get("/items/{item_id}")
+@app.get("/items/{item_id:int}")
 async def get_item(
     item_id: int = Path(
         ...,
@@ -106,3 +123,16 @@ async def get_item_or_404(item_id: int):
         # 方式 2：抛出自定义异常，走统一异常处理
         raise ItemNotFoundError(item_id)
     return {"item_id": item_id}
+
+
+# 依赖注入示例：公共参数与简单校验
+def common_params(
+    q: str | None = None,
+    limit: int = Query(10, ge=1, le=100),
+):
+    return {"q": q, "limit": limit}
+
+
+@app.get("/items/dep")
+async def read_items_dep(params: dict = Depends(common_params)):
+    return {"params": params}
