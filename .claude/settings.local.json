@@ -1,7 +1,14 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\n添加 Claude Code 文档和 ORM 功能增强\n\n- 新增 CLAUDE.md 项目说明文档\n- 新增 claude code使用说明.md 使用指南\n- 完善 ORM 实现：增加 CRUD 操作、查询示例\n- 更新教材文档和相关截图\n- 更新项目依赖\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push)",
+      "Bash(git -C \"D:\\\\codes\\\\study\\\\python\" status)",
+      "Bash(git -C \"D:\\\\codes\\\\study\\\\python\" diff)",
+      "Bash(git -C \"D:\\\\codes\\\\study\\\\python\" log --oneline -5)",
+      "Bash(git -C \"D:\\\\codes\\\\study\\\\python\" add .claude/settings.local.json \"claude code使用说明.md\" \"my_fastApi/教材.md\" \"py_project01/第二章/教材.md\" .claude/skills/ images/)"
     ]
   }
 }
