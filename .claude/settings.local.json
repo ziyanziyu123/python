@@ -8,7 +8,8 @@
       "Bash(git -C \"D:\\\\codes\\\\study\\\\python\" status)",
       "Bash(git -C \"D:\\\\codes\\\\study\\\\python\" diff)",
       "Bash(git -C \"D:\\\\codes\\\\study\\\\python\" log --oneline -5)",
-      "Bash(git -C \"D:\\\\codes\\\\study\\\\python\" add .claude/settings.local.json \"claude code使用说明.md\" \"my_fastApi/教材.md\" \"py_project01/第二章/教材.md\" .claude/skills/ images/)"
+      "Bash(git -C \"D:\\\\codes\\\\study\\\\python\" add .claude/settings.local.json \"claude code使用说明.md\" \"my_fastApi/教材.md\" \"py_project01/第二章/教材.md\" .claude/skills/ images/)",
+      "Bash(git -C \"D:\\\\codes\\\\study\\\\python\" commit -m \"$\\(cat <<''EOF''\n更新 Claude Code 学习文档和 Skills 配置\n\n- 新增 Agent Skills 攻略和名称解释（LLM、Context、Prompt、Agent、RAG、MCP 等）\n- 新增 Claude Skills 配置文件\n- 添加学习视频资源链接\n- 优化教材文档格式\n- 新增相关截图\n\nCo-Authored-By: Claude Opus 4.6 \\(1M context\\) <noreply@anthropic.com>\nEOF\n\\)\")"
     ]
   }
 }
